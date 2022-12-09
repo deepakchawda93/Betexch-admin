@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const plusminusSchema = new mongoose.Schema({
     id:{type:Number,default:0},
     uid:{type:String,required:true},
@@ -11,6 +10,5 @@ const plusminusSchema = new mongoose.Schema({
    total:{type:Number,default:0},
    balance:{type:Number,default:0},
 });
-
 plusminusSchema.set('timestamps',true);
 module.exports = mongoose.model("plusminus",plusminusSchema);

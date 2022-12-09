@@ -18,9 +18,10 @@ export default function MasterLimitUpdate(props) {
   const [DropDownValidation, setdropDownValidation] = useState(false);
   const [UidList, setUidList] = useState([]);
   const [data, setData] = useState([]);
-  const [DropDownName,setDropDownName] = useState("")
-  const userProfile = async () => {
-    axios.get(`/user-profile`, options).then((res) => {
+  const [DropDownName, setDropDownName] = useState("")
+
+  const userProfile = async (data) => {
+    axios.post(`/user-profile-byId`, data, options).then((res) => {
       const data = res.data.data;
       // console.log(data);
       setLimit(data.limit);
@@ -28,31 +29,27 @@ export default function MasterLimitUpdate(props) {
   };
 
   const handleSelectRole = async (e) => {
-   if(e.target.value==0){
-   return  setDropDownName("")
+    if (e.target.value == 0) {
+      return setDropDownName("")
     }
-      const data = {
-    userId: e.target.value,
-  };
-     axios.post(`/user-profile-byId`,data, options).then((res) => {
-      const data = res.data.data;
-      // console.log(data);
-      setLimit(data.limit);
-    });
-     setDropDownName({...DropDownName,"UIname":e.target.value})
+    const dataof = {
+      userId: e.target.value,
+    };
+    userProfile(dataof)
+    setDropDownName({ ...DropDownName, "UIname": e.target.value })
     setdropDownValidation(false);
   };
   useEffect(() => {
     userlist();
   }, [DropDownName])
-  
+
   const userlist = async () => {
     axios.get(`/admins/my-masters?page=1&limit=10`, options).then((res) => {
       // console.log("list =>", res);
       const data = res.data.data;
-      console.log("dropdownvalue=====",DropDownName)
-      if (DropDownName== "") {
-        return 
+      console.log("dropdownvalue=====", DropDownName)
+      if (DropDownName == "") {
+        return
       } else {
         setData([]);
         data.map((item) => {
@@ -75,9 +72,12 @@ export default function MasterLimitUpdate(props) {
     const data = new FormData(e.target);
     const Formvlaues = Object.fromEntries(data.entries());
     Formvlaues.value = await PlusMinusValue;
-    Formvlaues.limitUpdatedBy = await DropDownName.UIname ;
-    if (DropDownName !=="") {
-    setdropDownValidation(false);
+    Formvlaues.limitUpdatedBy = await DropDownName.UIname;
+    const dataof = {
+      userId: DropDownName.UIname,
+    };
+    if (DropDownName !== "") {
+      setdropDownValidation(false);
       const response = await axios.post(
         "/admins/change-master-limit",
         Formvlaues,
@@ -85,6 +85,7 @@ export default function MasterLimitUpdate(props) {
       );
       if (response.data.success) {
         // setDropDownName("")
+        userProfile(dataof)
         const data = response.data;
         if (data.success) {
           toast.success(data.message);
@@ -102,7 +103,7 @@ export default function MasterLimitUpdate(props) {
     }
   };
   // const myFormData = async (e) => {
-    
+
   //   e.preventDefault();
   //   const data = new FormData(e.target);
   //   const Formvlaues = Object.fromEntries(data.entries());
@@ -126,7 +127,7 @@ export default function MasterLimitUpdate(props) {
   //   .catch((error) => {
   //     toast.error(error.message);
   //   });
-  
+
   // };
   const GetNameList = async () => {
     axios
@@ -144,7 +145,7 @@ export default function MasterLimitUpdate(props) {
         console.log(err.response.success);
       });
   };
-  
+
   return (
     <>
       {/* <Sidebar /> */}

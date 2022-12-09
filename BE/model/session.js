@@ -1,19 +1,22 @@
 const mongoose = require("mongoose");
 
 const sessionbetSchema = new mongoose.Schema({
-    sno:{type:Number},
-    id:{type:Number, unique:true},
-    market_id:{type:Number},
-    declare:{type:Number,default:0},
-    manual_id:{type:Number},
-    name: {type:String, default:null},
-    no_run:{},
-    yes_range:{},
-    state:{type:Boolean,default:0},
-    type:{type:String},
-    status:{type:String, default:'pending'},
-    decision_run:{type:Number, default:null}
+  sessionId: { type: String, required: true },
+  marketId: { type: String, required: true },
+  matchId: { type: String, required: true },
+  sessionName: { type: String, required: true },
+  yesRun: { type: String, required: true }, //lgai
+  yesRate: { type: String, required: true },
+  noRun: { type: String, required: true }, //khai
+  noRate: { type: String, required: true },
+  decision: { type: Number, default: null },
+  sessionMinRate: { type: Number },
+  sessionMaxRate: { type: Number },
+  sessionStatus: { type: String, default: null },
+  status: { type: String, default: "pending" },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 
-sessionbetSchema.set('timestamps', true);
-module.exports = mongoose.model("sessions", sessionbetSchema); 
+sessionbetSchema.set("timestamps", true);
+module.exports = mongoose.model("sessions", sessionbetSchema);

@@ -29,132 +29,155 @@ export default function UserProfile() {
     }, []);
 
 
-    const [open, setOpen] = React.useState(false);
-
-    const viewfun = async () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    //////////////change password //////////////////
-    const myFormData = async (e) => {
-        e.preventDefault();
-        const data = new FormData(e.target);
-        const Formvlaues = Object.fromEntries(data.entries());
-        console.log("form data is == ", Formvlaues);
-        const response = await axios.post('/game/change-password', Formvlaues, options)
-        // console.log(response.response.status);
-        const data1 = response.data;
-        if (data1.success) {
-            toast.success(data1.message);
-            e.target.reset();
-        }
-        else {
-            toast.error(data1.message);
-        }
-    }
-
-
-
 
     return (
         <>
             <ToastContainer />
-            <div className="position-relative userTheme bg-light">
-                <div className="position-relative">
-                    <PageHeader title="PROFILE" />
-                    <div className="container table-responsive">
-                        <section className="content mt-5">
-                        
-                                <input type="hidden" name="superagent" value='1' className="readonly" />
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="card card-primary">
-                                            <div className="card-header" style={{ background: "#292961" }}>
-                                                <h3 className="card-title">PERSONAL INFORMATION</h3>
-
-                                                <div className="card-tools">
-                                                    <button type="button" className="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div className="card-body">
-
-                                                <div className="form-group">
-                                                    <label htmlFor="code">CLIENT CODE</label>
-                                                    <input type="text" name="code" value={data.uid} readOnly="" className="readonly form-control" />
-
-                                                </div>
-
-                                                <div className="form-group">
-                                                    <label htmlFor="name">USERNAME</label>
-                                                    <input type="text" id="name" className="form-control readonly" value={data.name} placeholder="Name" min="2" required="" name="name" />
-                                                </div>
-
-                                                <div className="form-group">
-                                                    <label htmlFor="name">CONTACT NO :</label>
-                                                    <input type="text" id="name" className="form-control readonly" value={data.contact_no} placeholder="Name" min="2" required="" name="name" />
-                                                </div>
-
-                                                {/* <div className="form-group">
-                                                    <label htmlFor="name">DATE OF JOINING :</label>
-                                                    <input type="text" id="name" className="form-control" value="2022-10-11 00:03:19" placeholder="Name" min="2" required="" name="name" />
-                                                </div> */}
-
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <form onSubmit={(e) => myFormData(e)}>
-                                            <div className="card card-secondary">
-                                                <div className="card-header">
-                                                    <h3 className="card-title">CHANGE PASSWORD</h3>
-                                                </div>
-                                                <div className="card-body">
-                                                    <div className="form-group">
-                                                        <label htmlFor="code"> CURRENT PASSWORD</label>
-                                                        <input type="password" name="current_pass" className="form-control" placeholder='Current Password' />
-
-                                                    </div>
-
-                                                    <div className="form-group">
-                                                        <label htmlFor="name">NEW PASSWORD</label>
-                                                        <input type="password" id="name" className="form-control" min="2" required=""
-                                                            placeholder='New Password'
-                                                            name="new_pass" />
-                                                    </div>
-
-                                                    <div className="form-group">
-                                                        <label htmlFor="name">CONFIRM PASSWORD</label>
-                                                        <input type="password" id="name" className="form-control" min="2" required=""
-                                                            placeholder='Confirm Password'
-                                                            name="confirm" />
-                                                    </div>
-                                                    <div className="row">
-                                                        <div className="col-12 text-center">
-
-                                                            <button type="submit" className="btn btn-success btn-bg" id="btn">CHANGE PASSWORD</button>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-
-                           
-                            <br />
-
-                        </section>
-                    </div>
-                </div>
+            <PageHeader />
+            <div className="menu mb-3" id="menu" align="center">
+                <ul className="nav">
+                    <li className="active w-100"><Link to="/MainMenu">BACK TO MAIN MENU</Link></li>
+                </ul>
             </div>
+            <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                    <td valign="top"><table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            <td align="left" valign="top">
+                                <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellspacing="0" cellpadding="0">
+                                    <tbody><tr>
+                                        <td height="35" align="center" bgcolor="#888399" className="TeamCombo">
+                                            <p className='style13'>RATE INFORMATION </p>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td align="left" valign="top">
+                                    <div id="msgCon" align="center" bgcolor="#f1f1f1"></div><table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="2" cellspacing="2">
+                                        <tbody><tr>
+                                            <td height="35" width="33%" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Rate Difference :</td>
+                                            <td align="center" width="33%" bgcolor="#FFFFFF" className="FontTextBlue style14">
 
+                                                <select name="Rate1" id="Rate1">
+
+                                                    <option value="0.08" selected="selected">8</option>
+                                                    <option value="0.00">0</option> <option value="0.01">1</option> <option value="0.02">2</option>
+                                                    <option value="0.03">3</option> <option value="0.04">4</option> <option value="0.05">5</option>
+                                                    <option value="0.06">6</option> <option value="0.07">7</option>
+                                                    <option value="0.08">8</option> <option value="0.09">9</option> <option value="0.10">10</option>
+                                                </select>
+                                            </td>
+                                            <td align="center" width="33%" bgcolor="#FFFFFF" className="FontTextBlue style1"><div className="menu" id="menu" align="center">
+                                                <ul className="nav">
+                                                    <li className="activeRate"><a className="btnClk">UPDATE</a></li>
+                                                </ul>
+                                            </div></td>
+
+                                        </tr>
+                                        </tbody></table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="bottom" bgcolor="#FFFFFF"></td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                </td>
+                            </tr>
+                        </tbody></table></td>
+                </tr>
+                    <tr>
+                        <td valign="top"><table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td align="left" valign="top">
+                                    <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellspacing="0" cellpadding="0">
+                                        <tbody><tr>
+                                            <td height="35" align="center" bgcolor="#888399" className="TeamCombo">
+                                                <p className='style15'>PERSONAL INFORMATION </p>
+                                            </td>
+                                        </tr>
+                                        </tbody></table>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="2" cellspacing="2">
+                                            <tbody><tr>
+                                                <td height="35" width="50%" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Client Code :</td>
+                                                <td align="center" width="50%" bgcolor="#FFFFFF" className="FontTextBlue style12">{data.uid}</td>
+                                            </tr>
+                                                <tr>
+                                                    <td height="35" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Client Name :</td>
+                                                    <td align="center" bgcolor="#FFFFFF" className="FontTextBlue style12">{data.first_name} {data.last_name}</td>
+                                                </tr>
+                                                {/* <tr><td height="35" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Contact No :</td>
+                                                    <td align="center" bgcolor="#FFFFFF" className="FontTextBlue style12"></td>
+                                                </tr> */}
+                                                <tr>
+                                                    <td height="35" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Date Of Joining :</td>
+                                                    <td align="center" bgcolor="#FFFFFF" className="FontTextBlue style12">{data.createdAt}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="38" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">Address :</td>
+                                                    <td align="center" bgcolor="#FFFFFF" className="FontTextBlue style12">INDIA</td>
+                                                </tr>
+                                            </tbody></table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="bottom" bgcolor="#FFFFFF"></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                    </td>
+                                </tr>
+                            </tbody></table></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td align="left" valign="top">
+                                    <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellspacing="0" cellpadding="0">
+                                        <tbody><tr>
+                                            <td height="35" align="center" bgcolor="#888399" className="TeamCombo">
+                                                <p className="style16">COMPANY INFORMATION </p>
+                                            </td>
+                                        </tr>
+                                        </tbody></table>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <table width="100%" style={{    background: "#e9e9e9", borderCollapse: "separate"}} border="0" cellpadding="2" cellspacing="2">
+                                            <tbody><tr>
+                                                <td height="35" width="50%" align="left" bgcolor="#FFFFFF" className="FontTextBlue style12">HELP LINE NO :</td>
+                                                <td align="center" width="50%" bgcolor="#FFFFFF" className="FontTextBlue style12">+91-1234567890</td>
+                                            </tr>
+                                            </tbody></table>
+                                    </td>
+                                </tr>
+                              
+                                <tr>
+                                    <td align="left" valign="top">&nbsp;</td>
+                                </tr>
+                               
+                            </tbody></table></td>
+                    </tr>
+                </tbody></table>
+                <div className="menu" id="menu" align="center">
+                <ul className="nav">
+                    <li className="active w-100"><Link to="/MainMenu">BACK TO MAIN MENU</Link></li>
+                </ul>
+            </div>
             <Footer />
 
 

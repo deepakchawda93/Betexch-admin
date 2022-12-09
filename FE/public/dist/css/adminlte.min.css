@@ -10,7 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -5396,7 +5396,7 @@ input[type=submit].btn-block {
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
+    /* background-color: rgba(0, 0, 0, .03); */
     border-bottom: 0 solid rgba(0, 0, 0, .125)
 }
 
@@ -28412,7 +28412,7 @@ body.text-sm .input-group-text {
 }
 
 .card-primary:not(.card-outline)>.card-header {
-    background-color: #007bff
+    /* background-color: #007bff */
 }
 
 .card-primary:not(.card-outline)>.card-header,
@@ -56209,4 +56209,1168 @@ dl, ol, ul {
 
 .card-indigo:not(.card-outline)>.card-header {
     background-color: #6610f2;
+}
+
+.statusactive
+{
+   background: #43a735;
+    padding: 2px 15px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+}
+.statusinactive
+{
+   background: #e74c3c;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+}
+
+.card-indigo:not(.card-outline)>.card-header {
+    background-color: #6610f2;
+}
+
+
+.scoreboard {
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: auto;
+    overflow: hidden;
+    width: 93%;
+}
+
+.inplay-match-bets-header {
+    color: #26283c;
+    display: flex;
+    font-family: Bebas Neue,cursive;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: .4;
+    padding: 5px 7px;
+}
+
+.inplay-match-bets {
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+
+.inplay-match-bet {
+    align-items: stretch;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    height: 100%;
+    padding: 0 5px;
+    width: 100%;
+}
+
+.inplay-match-bet .teamname {
+    padding: 10px 0;
+    width: 200px;
+}
+.teamname {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inplay-match-bet div:not(:first-child) {
+    width: 60px;
+}
+
+.lgaai {
+    background-color: #69b1f0!important;
+    text-align: center;
+}
+
+.inplay-match-bet div:not(:first-child) {
+    width: 60px;
+}
+
+.khaai {
+    background-color: #e26f7e!important;
+    text-align: center;
+}
+.khaai, .lgaai {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.inplay-match-bet div:not(:first-child) {
+    width: 60px;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-center {
+    justify-content: center!important;
+}
+
+.scoreboard {
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: auto;
+    overflow: hidden;
+    width: 93%;
+}
+
+.inplay-match-bets-header div:not(:first-child) {
+    font-family: Bebas Neue,cursive;
+    font-weight: 500;
+    width: 60px;
+}
+
+.main.p1_Video {
+    display: block;
+  }
+  
+  .p1_Video {
+    display: none;
+  }.bet-status {
+    align-items: center;
+    display: flex;
+    margin: 15px auto;
+    width: 93%;
+  }
+
+  .bet-status span {
+    font-size: 14px;
+    font-weight: 700;
+    max-width: -webkit-fill-available;
+    min-width: 100px;
+}
+
+.scoreboard .row:nth-child(odd) {
+    background: #f6f5f7;
+}
+
+.scoreboard .row {
+    padding: 10px 0;
+}
+
+.teamCss{background: #87CEEB !important;    
+    height: auto!important;}
+    .textRed{color:red;}
+    .textGreen{color:green;}
+    .lasttable td{background: white;color: black;}
+    .ten-chars {font-size: 11px!important;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;margin: auto;text-transform: uppercase;}.tablesesstion th {font-size: 12px !important;padding: 4px !important;}.tablesesstion td {padding: 4px 6px !important;text-transform: uppercase;}.text-transform {font-size: 16px;text-transform: uppercase;}.block_table td label span:last-child{font-size:12px !important; }.teamname{width:18%;}.rate_name{width:23%;}.block_table td {padding: 0px 0px !important;}.block_table td label {display: block;padding: 0.1rem;cursor: pointer;} .tableteam .thheader {background: #0c00bab5;}.std{width: 183px !important;   font-weight: 600;}
+    .inplay_session > td >span{font-size:10px; }
+    .ayt_modal {display:none;position:fixed;z-index: 1;padding-top: 100px;
+    left: 0;top: 0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color: rgba(0,0,0,0.4);}
+                .ayt_modal-content {
+        background-color: #f5f5f5;
+        margin: auto;
+        padding: 0px;
+        border: 0px solid #888;
+        width: 850px;
+        display: table;
+        position: initial;
+        background: #28284e;
+        border-radius: 7px;
+    }
+    .ayt_close {color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;}
+    .ayt_close:hover,.ayt_close:focus {color: #000;text-decoration: none;cursor: pointer;}
+    
+    .customamount span {
+    padding: 6px 11px;
+    cursor: pointer;
+    background: #64647f;
+    color: #fff;
+    float: left;
+    margin: 14px 5px 1px 5px;
+    position: initial;
+    display: inline-block;
+    width: 23%;
+    border-radius: 29px;
+    border: 2px solid #1c50af;
+    }
+    .customamount {width: 100%;display: block;float: left;text-align: center;    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;}
+    .session_point
+    {
+        width:65px;
+        padding:0px;
+    }
+    .session_point .khaai, .session_point .lgaai
+    {
+        
+        height: 62px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1.3px;
+
+    }
+    .session_point span
+    {
+        color: black !important;
+    }
+    .inplay-session-bet
+    {
+            text-align: initial;
+    }
+    .subtitle h6
+    {
+        font-size : 16px;
+    }
+    
+    .ayt_modal-content .ayt_close
+      {
+          color: #0288d1 !important;
+        font-size: 17px;
+        text-transform: capitalize !important;
+        margin-top: 12px;
+        margin-bottom: 7px;
+        margin-right: 29px;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 10px;
+       }
+  
+  #sesson
+  {
+      width : 33%;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    #sesson {
+      width : 100% !important;
+      }
+      .ayt_modal-content
+      {
+         width : 90% !important; 
+      }
+    }
+    .customamount span
+    {
+            width: 27% !important;
+    }
+    .text-transform, .teamname h6 {
+    font-size: 14px !important;
+    }
+    .teamname p
+    {
+        font-size: 12px;
+        margin-top: -4px;
+    }
+    .inplay-match-bets-header .teamname, .inplay-match-bets-header div:not(:first-child)
+    {
+        font-family: sans-serif;
+        font-weight: 600 !important;
+        font-size: 12px !important;
+    }
+    .betting
+    {
+        color:black !important;
+    }
+    .textBLack
+    {
+        color:black !important;
+    }
+
+    /* .rb-tabs .rb-tabs-header .rb-tabs-active-item {
+        height: 41px !important;
+        background-color: #363673 !important;
+        position: absolute;
+        bottom: 0;
+        border-radius: 5px;
+        transition: all .3s cubic-bezier(.4,0,.2,1) 0ms;
+        will-change: left,width;
+    } */
+    .mb-1d
+    {
+        margin-bottom: 6rem;
+    }
+    .rb-tabs .rb-tabs-header .rb-tabs-items {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: 1px 8px 11px 0 #d5d5d5;
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .rb-tabs .rb-tabs-header .rb-tabs-active-item {
+        height: 2px;
+        background-color: #358ad8 !important;
+        position: absolute;
+        bottom: 0;
+        transition: all .3s cubic-bezier(.4,0,.2,1) 0ms;
+        will-change: left,width;
+    }
+
+    .rb-tabs .rb-tabs-header .rb-tabs-items .rb-tabs-item {
+        text-align: center;
+        padding: 8px 16px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .yourbet .card {
+        word-wrap: break-word;
+        background-clip: border-box;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        position: relative;
+    }
+    
+    .yourbet .bet-card {
+        border-radius: 7px!important;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+    .yourbet .section-title {
+        font-size: 15px;
+        font-weight: 900;
+    }
+
+    .yourbet .bet-card .bet-details {
+        display: flex;
+        box-shadow: none !important;
+        font-size: 14px;
+        font-weight: 700;
+        justify-content: space-between;
+        padding: 4px 10px;
+    }
+    
+    .yourbet  .card-body {
+        flex: 1 1 auto;
+        padding: 1rem;
+    }
+
+    .yourbet .bet-card .bet-details div:first-child {
+        max-width: 60%!important;
+    }
+
+
+    .yourbet .bet-card .bet-details span {
+        color: grey;
+        font-size: 10px;
+    }
+
+    .yourbet .bet-card .bet-details p {
+        margin: 0;
+    }
+
+    .yourbet .bet-card {
+        border-radius: 7px!important;
+        margin: 10px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+    .yourbet .card-header:first-child {
+        border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+    
+    .yourbet .bet-card .card-header {
+        background: #fff;
+        background: white;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .skills {
+    margin-top: 10px;
+    padding: 1px;
+    background: #FF471A;
+}
+
+.welcomeh4
+{
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 19px;
+    margin-bottom: 3px;
+}
+
+.drag_drop {
+    background: #FFF;
+    padding: 0.5em 0.5em;
+}
+.drag_drop h4 {
+    font-size: 14px;
+    color: black;
+    font-family: system-ui;
+    margin-bottom: 12px;
+}
+
+.modal-open .modal
+{
+    display: block;
+}
+
+
+.modal-content2 {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.modal-header1 {
+    background-color: #52B5E1 !important;
+}
+
+.modal-header1 {
+    padding: 2px 16px;
+    background-color: #52b5e1;
+    color: white;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-body1 {
+    padding: 2px 16px;
+}
+
+.modal-footer2 {
+    background-color: #52B5E1 !important;
+}
+
+.modal-footer2 {
+    padding: 2px 16px;
+    background-color: #52b5e1;
+    color: white;
+}
+
+.modal {
+  
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content2 h2
+{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.modal-footer2 h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.close {
+    color: white;
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+.FontTextWhite h3 {
+    margin-bottom: -4px;
+    color: #fff;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 17px;
+}
+.FontTextWhite {
+    color: #fff;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile_picture {
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.GameList {
+    color: #000;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: .8em;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.footer
+{
+    background: #e9e9e9;
+    width: 100%;
+}
+
+.footer .FontTextWhite {
+    color: #fff;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    padding: 19px;
+    font-weight: 700;
+}
+
+.mx-auto {
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+
+
+.card-header:first-child {
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.card-header {
+    background-color: #fff;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.flex-column {
+    flex-direction: column!important;
+}
+.border-bottom-0 {
+    border-bottom: 0!important;
+}
+.d-flex {
+    display: flex!important;
+}
+.card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.MuiTypography-colorSecondary {
+    color: #E91E63 !important;
+}
+
+.MuiTypography-h1 {
+    font-size: 4rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+}
+.MuiTypography-colorSecondary {
+    color: #9c27b0;
+}
+
+.main-background {
+    background: #fff;
+    /* background: linear-gradient(360deg, #e0e0ea 0%, #5eb4ef 100%); */
+    height: 100vh;
+}
+
+.card-header
+{
+    background-color: white;
+}
+
+
+.form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding: 1rem 0.75rem;
+}
+
+.form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}
+.form-floating>.form-control {
+    padding: 1rem 0.75rem;
+}
+.form-floating>.form-control, .form-floating>.form-select {
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+}
+.input {
+    font-family: inherit;
+    width: 100%;
+    display: block;
+    border: 0;
+    border: 2px solid #9c27b0;
+    border-radius: 4px;
+    outline: 0;
+    font-size: 1rem;
+    color: black;
+    padding: 18px 12px;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #E91E63 !important;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    padding: 8px 22px;
+    font-size: 0.9375rem;
+    margin: 24px 0px 16px;
+    width: 100%;
+}
+
+
+body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+
+  .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
+    opacity: .65;
+    transform: scale(.85) translateY(-0.8rem) translateX(0.15rem);
+    color: #4a148c;
+    padding: 0rem 4px;
+    background: white;
+    opacity: 1;
+    left: 12px;
+}
+
+.form-floating>label {
+    padding: 1rem 0.75rem;
+    transition: all .3s;
+    height: 40%;
+    color: #787b7d;
+}
+
+.form-floating>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500 !important;
+}
+
+.form-floating>label {
+    padding: 1rem 0.75rem;
+    transition: all .3s;
+    height: 40%;
+    color: #787b7d;
+}
+
+
+.input {
+    font-family: inherit;
+    width: 100%;
+    display: block;
+    border: 0;
+    border: 2px solid #9c27b0;
+    border-radius: 4px;
+    outline: 0;
+    font-size: 1rem;
+    color: black;
+    padding: 18px 12px;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem;
+}
+
+.nav li a:hover, .nav li.activeRate a {
+    border: 1px solid #000;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    background: #87bb33;
+}
+.nav li a:hover, .nav li.active a {
+    border: 1px solid #2f5c94 !important;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 13px;
+    color: #fff;
+    display: block;
+    padding: 6px;
+    font-weight: 700;
+    background: #52b5e1;
+}
+.nav li:first-child a {
+    border-top: none;
+}
+
+.nav li a:hover, .nav li.activeRate a {
+    border: 1px solid #000;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    background: #87bb33;
+}
+
+.ledger thead th {
+    border-bottom: 1px solid #dee2e6;
+    width: 18%;
+    height: 35px;
+    text-align: -webkit-center;
+    vertical-align: middle;
+    background-color: rgb(136, 131, 153) !important;
+    color: white;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.FontTextBlack10px {
+    color: #000;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.menu {
+    background: #fc6;
+}
+.mybtn
+{
+    font-size: 13px;
+    border: 1px solid #00000075
+}
+
+.style1
+{
+    vertical-align:middle;text-align:center;padding-right:5px; margin-bottom: 0px;
+}
+
+.style12
+{
+    vertical-align:middle;text-align:left;padding-right:5px; margin-bottom: 0px;
+}
+
+.style13
+{
+    color:#FFF;font-family:Verdana, Geneva, sans-serif;font-size:13px;font-weight:bold;margin-bottom: 0px;
+}
+
+.style14
+{
+    vertical-align:middle;text-align:center;padding-right:5px; margin-bottom: 0px;
+}
+
+.style15
+{
+    color:#FFF;font-family:Verdana, Geneva, sans-serif;font-size:13px;font-weight:bold;margin-bottom: 0px;
+}
+
+.style16
+{
+    color:#FFF;font-family:Verdana, Geneva, sans-serif;font-size:13px;font-weight:bold;margin-bottom: 0px;
+}
+
+.FontTextBlue {
+    color: #000;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.activeRate
+{
+    width: 100%;
+}
+
+.btnClk
+{
+    width: 100%;
+    display: block;
+    padding: 10px !important;
+    cursor: pointer;
+}
+
+.TeamName {
+    background-color: #FF0266 !important;
+}
+.TeamName {
+    background: #FF471A;
+    padding: 0.3em 0;
+    border-top: 1px solid #fc3;
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.TeamName a {
+    font-size: .85em;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.TeamName a {
+    font-size: .85em;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.GameList {
+    color: #000;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px !important;
+    line-height: 22px;
+    font-weight: 700;
+    padding-top: 1px;
+}
+
+.FontTextWhite10px {
+    color: #fff;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.FontTextWhite10px h3 {
+    color: #fff;
+    border: none;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.FontTextWhite10px p, .FontTextWhite10px h3{
+  margin-bottom: 0px;
+}
+
+.ButtonK {
+    background-color: red;
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: #00f;
+    border-color: #696 #363 #363 #696;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ButtonL {
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: red;
+    border-color: #696 #363 #363 #696;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ButtonL {
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: red;
+    border-color: #696 #363 #363 #696;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.nav li a:hover, .nav li.active a {
+    border: 1px solid #2f5c94;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 13px;
+    color: #fff;
+    display : block;
+    font-weight: 700;
+    background: #52b5e1;
+}
+
+.style18
+{
+    color:#00F;font-family:Verdana, Geneva, sans-serif;font-size:12px;font-weight:bold;
+}
+
+
+.ScoreCard {
+    background: #fff;
+    padding: 0.2em;
+}
+.ScoreCard {
+    background: #fff;
+    padding: 0.2em;
+}   
+
+
+.ScoreCard p {
+    font-size: .6em;
+    color: #000;
+    padding: 2px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 2px dotted #333;
+    font-family: Verdana,Geneva,sans-serif;
+    font-weight: 700;
+}
+
+.ScoreCard p {
+    font-size: .6em;
+    color: #000;
+    padding: 2px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 2px dotted #333;
+    margin: 0;
+    color: #000;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.price-btn {
+    color: #fff;
+    display: block;
+    /* padding: 0.5em 0; */
+    font-size: 1em;
+    background: #0ff;
+    border: 1px solid #000;
+    margin-top: -7px;
+    padding-bottom: 6px;
+}
+.price-btn span
+{
+    color: #00F;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+
+.ButtonSess {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0 solid;
+    color: #000;
+    border-color: #696 #363 #363 #696;
+    height: 15px;
+    width: 150px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ButtonNRun {
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: red;
+    border-color: #696 #363 #363 #696;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ButtonNRate {
+    background-color: transparent;
+    border: 0 solid;
+    color: red;
+    height: 15px;
+    width: 40px;
+    text-align: center!important;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ButtonYRun {
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: #009;
+    border-color: #696 #363 #363 #696;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.ButtonYRate {
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: transparent;
+    border: 0 solid;
+    color: #009;
+    border-color: #696 #363 #363 #696;
+    height: 15px;
+    width: 40px;
+    text-align: center;
+    font-family: trebuchet ms,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.MatchAmount {
+    background: #fff;
+    color: #000;
+    font-weight: bolder;
+    border: none;
+    text-align: center;
+    width: 120px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: Verdana,Geneva,sans-serif;
+}
+
+
+.AmountTime {
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 24px;
+    text-align: center;
+    color: red;
+    width: 45px;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+}
+
+.AmountTime {
+    background: #2486B2 !important;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.upcoming
+{
+    border: 1px solid #2f5c94;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 13px;
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    background: #0336FF ! important;
+}
+
+.cursur
+{
+    cursor: pointer;
+}
+
+
+iframe {
+    border: 0;
+    width: 100%;
 }

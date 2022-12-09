@@ -1,13 +1,14 @@
 var express = require("express");
 require("dotenv").config();
 const User = require("../model/user");
-
+// ok
 const Match = require("../model/mcreate");
 const records = require("../model/mrecord");
 const Session = require("../model/session");
 const subLedger = require("../model/subadmin_ledger");
 const upcomingPay = require("../model/upcoming_pays");
 const cashLedger = require("../model/cash_ledger");
+
 const Login = require("../model/login_report");
 const plusMinus = require("../model/plus_minus_report");
 const Owner = require("../model/owner");
@@ -31,6 +32,7 @@ var storage = multer.diskStorage({
   },
 });
 
+var redisclient = require("../bin/redis");
 var upload = multer({ storage: storage });
 const fs = require("fs");
 
@@ -246,6 +248,7 @@ app.post(
       const token = jwt.sign({ user_id: user._id }, process.env.TOKEN_KEY, {
         expiresIn: "20h",
       });
+
       let updatedLimit = 0;
       let updatedShare = 0;
       if (subadminUser.limit > user.limit && subadminUser.share > user.share) {
@@ -732,6 +735,7 @@ app.post(
       const token = jwt.sign({ user_id: user._id }, process.env.TOKEN_KEY, {
         expiresIn: "20h",
       });
+
       user.token = token;
       return res.status(201).json({
         status: 201,
@@ -1443,6 +1447,7 @@ app.post(
       const token = jwt.sign({ user_id: user._id }, process.env.TOKEN_KEY, {
         expiresIn: "20h",
       });
+
       let updatedLimit = 0;
       let updatedShare = 0;
       if (
@@ -2185,6 +2190,7 @@ app.post(
         const token = jwt.sign({ user_id: user._id }, process.env.TOKEN_KEY, {
           expiresIn: "20h",
         });
+
         user.token = token;
         return res.status(201).json({
           status: 201,
@@ -2295,6 +2301,7 @@ app.post(
         const token = jwt.sign({ user_id: user._id }, process.env.TOKEN_KEY, {
           expiresIn: "20h",
         });
+
         user.token = token;
         return res.status(201).json({
           status: 201,
@@ -4297,6 +4304,27 @@ app.post("/singlematch", sessionCheck.isAuth, async (req, res) => {
   }
 });
 
+//api for getting sessionData list
+app.get("/subadmin/sessions", sessionCheck.isAuth, async (req, res) => {
+  const sessionData = await Session.find();
+
+  if (!sessionData.length) {
+    return res.status(200).json({
+      status: 200,
+      message: "No session results found.",
+      success: false,
+      data: null,
+    });
+  }
+
+  return res.status(200).json({
+    status: 200,
+    message: "Fetched session result successfully.",
+    success: true,
+    data: sessionData,
+  });
+});
+
 app.get("/session", sessionCheck.isAuth, async (req, res) => {
   res.render("user/session");
 });
@@ -4311,6 +4339,40 @@ app.get("/logout", (req, res) => {
   res.redirect("/index");
 });
 
+//  returns a list of all sessions in-play
+app.get(
+  "/inplay-sessions",
+  sessionCheck.isAuth,
+  upload.none(),
+  async (req, res) => {
+    try {
+      const sessions = await Session.find({ status: "active" });
+      if (sessions.length < 1) {
+        res.status(200).json({
+          status: 200,
+          message: "No session data found",
+          success: false,
+          data: null,
+        });
+      } else {
+        res.status(200).json({
+          status: 200,
+          message: "Total matches in-play : " + sessions.length,
+          success: true,
+          sessions,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+      res.status(200).json({
+        status: 200,
+        message: "Internal server error",
+        success: false,
+        data: err,
+      });
+    }
+  }
+);
 //Get user Profile
 app.get("/user-profile", sessionCheck.isAuth, async (req, res) => {
   const userId = req.user.uid;
@@ -4333,7 +4395,6 @@ app.get("/user-profile", sessionCheck.isAuth, async (req, res) => {
     data: results,
   });
 });
-
 //get user profile by userId
 app.post(
   "/user-profile-byId",
@@ -4361,7 +4422,5 @@ app.post(
     });
   }
 );
-
-
 
 module.exports = app;

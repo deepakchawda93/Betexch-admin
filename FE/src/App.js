@@ -63,13 +63,13 @@ import PrivateRoute from "./PrivateRoute";
 import AllMatches from "./ControlPanel/AllMatches";
 
 ///////////////user control panel ////////
-// import UserLogin from "./ClientPanel/UserLogin";
-// import UserInplay from "./ClientPanel/UserInplay";
-// import UserCompletegame from "./ClientPanel/UserCompletegame";
-// import UserMyLedger from "./ClientPanel/UserMyLedger";
-// import UserProfile from "./ClientPanel/UserProfile";
-// import UserCasino from "./ClientPanel/UserCasino";
-// import ClientLimitUpdate from "./Pages/UpdateLimit/ClientLimitUpdate";
+import UserLogin from "./ClientPanel/UserLogin";
+import UserInplay from "./ClientPanel/UserInplay";
+import UserCompletegame from "./ClientPanel/UserCompletegame";
+import UserMyLedger from "./ClientPanel/UserMyLedger";
+import UserProfile from "./ClientPanel/UserProfile";
+import UserCasino from "./ClientPanel/UserCasino";
+import ClientLimitUpdate from "./Pages/UpdateLimit/ClientLimitUpdate";
 import InPlayList from "./ControlPanel/InPlay";
 import SessionInplay from "./ControlPanel/SessionInplay";
 import SessionMinMaxLimit from "./ControlPanel/SessionMinMaxLimit";
@@ -78,7 +78,11 @@ import RepeatSessionDesscion from "./ControlPanel/RepeatSessionDesscion";
 import MatchDesscion from "./ControlPanel/MatchDesscion";
 import CompleteSports from "./ControlPanel/CompleteSports";
 import ViewDesicion from "./ControlPanel/ViewDesicion";
-// import UserBet from "./ClientPanel/UserBet";
+import UserBet from "./ClientPanel/UserBet";
+import Changepassword from "./ClientPanel/Changepassword";
+import Welcome from "./ClientPanel/Welcome";
+import MainMenu from "./ClientPanel/MainMenu";
+
 
 function App() {
   return (
@@ -86,14 +90,23 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* ////////login panel //////////// */}
-          {/* <Route path="/user-login" element={<UserLogin />} />
+          <Route path="/user-login" element={<UserLogin />} />
           <Route path="/user-ledger" element={<UserMyLedger />} />
           <Route path="/user-complete-game" element={<UserCompletegame />} />
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/user-inplay" element={<UserInplay />} />
           <Route path="/user-casino" element={<UserCasino />} />
-          <Route path="/user-start-bet" element={<UserBet />} /> */}
+          <Route path="/user-start-bet" element={<UserBet />} />
+          {/* //////////////////////////////////// */}
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/MainMenu" element={<MainMenu />} />
+          <Route path="/user-password" element={<Changepassword />} />
+
+
+
+
           {/* ////////end user panel //////////// */}\
+
           {/* ////////control panel //////////// */}
           <Route path="/super-admin/login" element={<ControlLogin />} />
           <Route path="/super-admin/all-matches" element={<AllMatches />} />
@@ -202,7 +215,6 @@ function App() {
               path="/agent/limitUpdate"
               element={<AgentMasterLimitUpdate />}
             />
-
             {/* ClientMasterlist */}
             <Route
               path="/clients"

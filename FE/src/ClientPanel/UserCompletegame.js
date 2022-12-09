@@ -25,43 +25,46 @@ export default function UserCompletegame() {
             <div className="position-relative userTheme bg-light">
                 <div className="position-relative">
                  <PageHeader title="COMPLETE GAME" />
+                 <div className="menu mb-3" id="menu" align="center">
+                <ul className="nav">
+                    <li className="active w-100"><Link to="/MainMenu">BACK TO MAIN MENU</Link></li>
+                </ul>
+               </div>
                     <div className="container-fluid table-responsive">
                         <table className="ledger table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>MATKA NAME</th>
-                                    <th>MATKA BET</th>
+                                    <th style={{textAlign: "initial"}}>MATCH NAME</th>
+                                    <th>MATCH BETS</th>
+                                    <th>WON BY</th>
                                     <th>RESULT</th>
                                     
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                <td onClick={(e) => { viewfun(e)}}><span className='clickbutton'>kalyan</span></td>
+                                <td  style={{textAlign: "initial"}}><span className='clickbutton'>India Vs Pakistan</span></td>
                                 <td>12</td>
+                                <td>India</td>
                                 <td  className="text-center">500</td>
                                 </tr>
                                 <tr>
-                                <td onClick={(e) => { viewfun(e)}}><span className='clickbutton'>Golden Morning Start</span></td>
+                                <td  style={{textAlign: "initial"}}><span className='clickbutton'>  Afghanistan Vs India</span></td>
                                 <td>12</td>
+                                <td>India</td>
                                 <td  className="text-center">250</td>
                                 </tr>
-                                <tr>
-                                <td onClick={(e) => { viewfun(e)}}><span className='clickbutton'>Shridham</span></td>
-                                <td>12</td>
-                                <td  className="text-center">250</td>
-                                </tr>
-                                <tr>
-                                <td onClick={(e) => { viewfun(e)}}><span className='clickbutton'>Golden</span></td>
-                                <td>89</td>
-                                <td  className="text-center">586</td>
-                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
+            <div className="menu mt-3" id="menu" align="center">
+                <ul className="nav">
+                    <li className="active w-100"><Link to="/MainMenu">BACK TO MAIN MENU</Link></li>
+                </ul>
+            </div>
             <Footer />
 
             <Dialog className="notifi-style" open={open} onClose={handleClose}>

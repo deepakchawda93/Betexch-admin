@@ -8,11 +8,11 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var Tool = require("./tools");
 Tool.db_connect();
+var redisclient = require("./bin/redis");
 var usersRouter = require("./controllers/users");
 var adminRouter = require("./controllers/admin");
 var ownersRouter = require("./controllers/owners");
 var clientsRouter = require("./controllers/clients");
-
 var app = express();
 var sessionVar;
 app.set("views", path.join(__dirname, "public/build"));

@@ -22,20 +22,20 @@ export default function SuperAgentLimitUpdate() {
     userlist();
   }, [DropDownName]);
 
-  // const userProfile = async () => {
-  //   axios.get(`/user-profile`, options).then((res) => {
-  //     const data = res.data.data;
-  //     console.log(data);
-  //     setLimit(data.limit);
-  //   });
-  // };
+  const userProfile = async () => {
+    axios.post(`/user-profile-byId`, data, options).then((res) => {
+      const data = res.data.data;
+      // console.log(data);
+      setLimit(data.limit);
+    });
+  };
   const userlist = async () => {
     axios.get(`/admins/my-superagent?page=1&limit=10`, options).then((res) => {
       // console.log("list =>", res);
       const data = res.data.data;
       console.log("dropdownvalue=====", DropDownName);
       if (DropDownName == "") {
-        return 
+        return
         // setData(data);
       } else {
         setData([]);
@@ -51,14 +51,10 @@ export default function SuperAgentLimitUpdate() {
     if (e.target.value == 0) {
       return setDropDownName("");
     }
-       const data = {
-    userId: e.target.value,
-  };
-     axios.post(`/user-profile-byId`,data, options).then((res) => {
-      const data = res.data.data;
-      // console.log(data);
-      setLimit(data.limit);
-    });
+    const dataof = {
+      userId: e.target.value,
+    };
+    userProfile(dataof)
     setDropDownName({ ...DropDownName, UIname: e.target.value });
     setdropDownValidation(false);
   };
@@ -75,6 +71,9 @@ export default function SuperAgentLimitUpdate() {
     const Formvlaues = Object.fromEntries(data.entries());
     Formvlaues.value = await PlusMinusValue;
     Formvlaues.limitUpdatedBy = await DropDownName.UIname;
+    const dataof = {
+      userId: DropDownName.UIname,
+    };
     if (DropDownName !== "") {
       setdropDownValidation(false);
       const response = await axios.post(
@@ -83,6 +82,7 @@ export default function SuperAgentLimitUpdate() {
         options
       );
       if (response.data.success) {
+        userProfile(dataof)
         // setDropDownName("")
         const data = response.data;
         if (data.success) {
@@ -118,7 +118,7 @@ export default function SuperAgentLimitUpdate() {
   };
   return (
     <>
-     
+
       <div className="content-wrapper">
         <section className="content-header">
           <div className="container-fluid">

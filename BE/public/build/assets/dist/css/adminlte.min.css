@@ -56190,23 +56190,3 @@ dl, ol, ul {
     color: #292961;
     text-decoration: none;
 }
-.statusactive
-{
-   background: #43a735;
-    padding: 2px 15px;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-}
-.statusinactive
-{
-   background: #e74c3c;
-    padding: 2px 8px;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-}
-
-.card-indigo:not(.card-outline)>.card-header {
-    background-color: #6610f2;
-}
